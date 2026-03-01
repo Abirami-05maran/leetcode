@@ -1,0 +1,12 @@
+class Solution:
+    def minSubsequence(self, nums: List[int]) -> List[int]:
+        nums.sort(reverse=True)
+        s=sum(nums)
+        result=[]
+        t=0
+        for i in range(len(nums)):
+            t+=nums[i]
+            result.append(nums[i])
+            if t>(s-t):
+                return result
+        
